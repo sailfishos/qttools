@@ -1,17 +1,17 @@
-%define _qtmodule_snapshot_version 5.0.0-beta1
+%define _qtmodule_snapshot_version 5.0.0
 %define keep_static 1
 Name:       qt5-qttools
 Summary:    Development tools for Qt
-Version:    5.0.0~beta1
+Version:    5.0.0
 Release:    1%{?dist}
 Group:      Qt/Qt
 License:    LGPLv2.1 with exception or GPLv3
 URL:        http://qt.nokia.com
 #Source:     %{name}-%{version}.tar.xz
 Source0:    qttools-opensource-src-%{_qtmodule_snapshot_version}.tar.xz
-Patch0:     link_qcollectiongenerator_with_qthelp.patch
-Patch1:     link_qhelpconverter_with_qthelp.patch
-Patch2:     fix_qtdesigner_include_paths.patch
+Patch0:     link_qhelpconverter_with_qthelp.patch
+Patch1:     fix_qtdesigner_include_paths.patch
+Patch2:     link-lrelease-against-zlib.patch
 BuildRequires:  qt5-qtgui-devel
 BuildRequires:  qt5-qtnetwork-devel
 BuildRequires:  qt5-qtcore-devel
@@ -19,6 +19,7 @@ BuildRequires:  qt5-qtsql-devel
 BuildRequires:  qt5-qtxml-devel
 BuildRequires:  qt5-qtwidgets-devel
 BuildRequires:  qt5-qtprintsupport-devel
+BuildRequires:  qt5-qtbootstrap-devel
 BuildRequires:  qt5-qmake
 BuildRequires:  qt5-tools
 BuildRequires:  qt5-qtdbus-devel
@@ -225,15 +226,15 @@ find %{buildroot}%{_libdir} -type f -name '*.prl' \
 %files qtuitools-devel
 %defattr(-,root,root,-)
 %{_includedir}/qt5/QtUiTools/
-%{_libdir}/libQtUiTools.prl
-%{_libdir}/libQtUiTools.a
-%{_libdir}/pkgconfig/QtUiTools.pc
-%{_datadir}/qt5/mkspecs/modules/qt_uitools.pri
+%{_libdir}/libQt5UiTools.prl
+%{_libdir}/libQt5UiTools.a
+%{_libdir}/pkgconfig/Qt5UiTools.pc
+%{_datadir}/qt5/mkspecs/modules/qt_lib_uitools.pri
 %{_libdir}/cmake/Qt5UiTools/
 
 %files qthelp
 %defattr(-,root,root,-)
-%{_libdir}/libQtHelp.so.*
+%{_libdir}/libQt5Help.so.*
 
 %files qthelp-devel
 %defattr(-,root,root,-)
@@ -242,37 +243,37 @@ find %{buildroot}%{_libdir} -type f -name '*.prl' \
 %{_bindir}/qcollectiongenerator
 %{_bindir}/qhelpconverter
 %{_includedir}/qt5/QtHelp/
-%{_libdir}/libQtHelp.prl
-%{_libdir}/libQtHelp.so
-%{_libdir}/pkgconfig/QtHelp.pc
-%{_datadir}/qt5/mkspecs/modules/qt_help.pri
+%{_libdir}/libQt5Help.prl
+%{_libdir}/libQt5Help.so
+%{_libdir}/pkgconfig/Qt5Help.pc
+%{_datadir}/qt5/mkspecs/modules/qt_lib_help.pri
 %{_libdir}/cmake/Qt5Help/
 
 %files qtclucene
 %defattr(-,root,root,-)
-%{_libdir}/libQtCLucene.so.*
+%{_libdir}/libQt5CLucene.so.*
 
 %files qtclucene-devel
 %defattr(-,root,root,-)
 %{_includedir}/qt5/QtCLucene/
-%{_libdir}/libQtCLucene.prl
-%{_libdir}/libQtCLucene.so
-%{_libdir}/pkgconfig/QtCLucene.pc
-%{_datadir}/qt5/mkspecs/modules/qt_clucene.pri
+%{_libdir}/libQt5CLucene.prl
+%{_libdir}/libQt5CLucene.so
+%{_libdir}/pkgconfig/Qt5CLucene.pc
+%{_datadir}/qt5/mkspecs/modules/qt_lib_clucene.pri
 # 
 %files qtdesigner
 %defattr(-,root,root,-)
 %{_bindir}/designer
-%{_libdir}/libQtDesigner*.so.*
+%{_libdir}/libQt5Designer*.so.*
 
 %files qtdesigner-devel
 %defattr(-,root,root,-)
 %{_includedir}/qt5/QtDesigner/
 %{_includedir}/qt5/QtDesignerComponents/
-%{_libdir}/libQtDesigner*.so
-%{_libdir}/libQtDesigner*.prl
-%{_datadir}/qt5/mkspecs/modules/qt_designer*.pri
-%{_libdir}/pkgconfig/QtDesigner*.pc
+%{_libdir}/libQt5Designer*.so
+%{_libdir}/libQt5Designer*.prl
+%{_datadir}/qt5/mkspecs/modules/qt_lib_designer*.pri
+%{_libdir}/pkgconfig/Qt5Designer*.pc
 %{_libdir}/cmake/Qt5Designer/
 
 #### No changelog section, separate $pkg.changes contains the history

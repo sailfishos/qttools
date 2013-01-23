@@ -9,4 +9,4 @@ index f875476..55f5b35 100644
 +
 +# Link with QtHelp
 +# Requires linking with QtCLucene
-+LIBS += -L../../lib -L../../lib/fulltextsearch -lQtCLucene
++LIBS += -L../../lib -L../../lib/fulltextsearch -lQt5CLucene
