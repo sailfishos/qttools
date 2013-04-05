@@ -1,8 +1,8 @@
-%define _qtmodule_snapshot_version 5.0.0
+%define _qtmodule_snapshot_version 5.0.1
 %define keep_static 1
 Name:       qt5-qttools
 Summary:    Development tools for Qt
-Version:    5.0.0
+Version:    5.0.1
 Release:    1%{?dist}
 Group:      Qt/Qt
 License:    LGPLv2.1 with exception or GPLv3
@@ -154,7 +154,7 @@ applications that use QtDesigner
 
 %build
 export QTDIR=/usr/share/qt5
-qmake
+qmake -qt=5
 make %{?_smp_flags}
 
 %install
@@ -204,21 +204,21 @@ find %{buildroot}%{_libdir} -type f -name '*.prl' \
 
 %files linguist
 %defattr(-,root,root,-)
-%{_bindir}/lconvert
-%{_bindir}/linguist
-%{_bindir}/lrelease
-%{_bindir}/lupdate
+%{_qt5_bindir}/lconvert
+%{_qt5_bindir}/linguist
+%{_qt5_bindir}/lrelease
+%{_qt5_bindir}/lupdate
 %{_datadir}/qt5/phrasebooks/
 %{_libdir}/cmake/Qt5Linguist*
 
 %files pixeltool
 %defattr(-,root,root,-)
-%{_bindir}/pixeltool
+%{_qt5_bindir}/pixeltool
 
 %files qdbus
 %defattr(-,root,root,-)
-%{_bindir}/qdbus
-%{_bindir}/qdbusviewer
+%{_qt5_bindir}/qdbus
+%{_qt5_bindir}/qdbusviewer
 
 %files qtuitools
 %defattr(-,root,root,-)
@@ -238,10 +238,10 @@ find %{buildroot}%{_libdir} -type f -name '*.prl' \
 
 %files qthelp-devel
 %defattr(-,root,root,-)
-%{_bindir}/assistant
-%{_bindir}/qhelpgenerator
-%{_bindir}/qcollectiongenerator
-%{_bindir}/qhelpconverter
+%{_qt5_bindir}/assistant
+%{_qt5_bindir}/qhelpgenerator
+%{_qt5_bindir}/qcollectiongenerator
+%{_qt5_bindir}/qhelpconverter
 %{_includedir}/qt5/QtHelp/
 %{_libdir}/libQt5Help.prl
 %{_libdir}/libQt5Help.so
@@ -263,7 +263,7 @@ find %{buildroot}%{_libdir} -type f -name '*.prl' \
 # 
 %files qtdesigner
 %defattr(-,root,root,-)
-%{_bindir}/designer
+%{_qt5_bindir}/designer
 %{_libdir}/libQt5Designer*.so.*
 
 %files qtdesigner-devel
