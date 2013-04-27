@@ -1,8 +1,8 @@
-%define _qtmodule_snapshot_version 5.0.1
+%define _qtmodule_snapshot_version 5.0.2
 %define keep_static 1
 Name:       qt5-qttools
 Summary:    Development tools for Qt
-Version:    5.0.1
+Version:    5.0.2
 Release:    1%{?dist}
 Group:      Qt/Qt
 License:    LGPLv2.1 with exception or GPLv3
@@ -12,6 +12,7 @@ Source0:    qttools-opensource-src-%{_qtmodule_snapshot_version}.tar.xz
 Patch0:     link_qhelpconverter_with_qthelp.patch
 Patch1:     fix_qtdesigner_include_paths.patch
 Patch2:     link-lrelease-against-zlib.patch
+Patch3:     link_assistant_with_clucene.patch
 BuildRequires:  qt5-qtgui-devel
 BuildRequires:  qt5-qtnetwork-devel
 BuildRequires:  qt5-qtcore-devel
@@ -151,6 +152,7 @@ applications that use QtDesigner
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 export QTDIR=/usr/share/qt5

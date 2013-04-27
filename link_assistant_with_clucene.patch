@@ -1,0 +1,32 @@
+diff -ru qttools-opensource-src-5.0.2/src/assistant/assistant/assistant.pro b/src/assistant/assistant/assistant.pro
+--- qttools-opensource-src-5.0.2/src/assistant/assistant/assistant.pro	2013-04-09 10:11:56.000000000 +1000
++++ b/src/assistant/assistant/assistant.pro	2013-04-23 22:24:50.543007275 +1000
+@@ -96,6 +96,8 @@
+ RESOURCES += assistant.qrc \
+     assistant_images.qrc
+ 
++LIBS += -L../../lib -lQt5CLucene
++
+ win32 {
+     !wince*:LIBS += -lshell32
+     RC_FILE = assistant.rc
+diff -ru qttools-opensource-src-5.0.2/src/assistant/qcollectiongenerator/qcollectiongenerator.pro b/src/assistant/qcollectiongenerator/qcollectiongenerator.pro
+--- qttools-opensource-src-5.0.2/src/assistant/qcollectiongenerator/qcollectiongenerator.pro	2013-04-09 10:11:56.000000000 +1000
++++ b/src/assistant/qcollectiongenerator/qcollectiongenerator.pro	2013-04-23 22:40:58.511807224 +1000
+@@ -5,5 +5,6 @@
+     ../shared/collectionconfiguration.cpp
+ HEADERS += ../shared/helpgenerator.h \
+     ../shared/collectionconfiguration.h
++LIBS += -L../../lib -lQt5CLucene
+ 
+ load(qt_tool)
+diff -ru qttools-opensource-src-5.0.2/src/assistant/qhelpgenerator/qhelpgenerator.pro b/src/assistant/qhelpgenerator/qhelpgenerator.pro
+--- qttools-opensource-src-5.0.2/src/assistant/qhelpgenerator/qhelpgenerator.pro	2013-04-09 10:11:56.000000000 +1000
++++ b/src/assistant/qhelpgenerator/qhelpgenerator.pro	2013-04-23 22:23:30.662611185 +1000
+@@ -7,4 +7,6 @@
+ 
+ HEADERS += ../shared/helpgenerator.h
+ 
++LIBS += -L../../lib -lQt5CLucene
++
+ load(qt_tool)
