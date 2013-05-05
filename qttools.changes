@@ -1,3 +1,6 @@
+* Sun May 05 2013 Carsten Munk <carsten.munk@jollamobile.com> - 5.0.2
+- Add declarative support to lupdate
+
 * Sat Apr 27 2013 Chris Leach <cxl000@hotmail.com> - 5.0.2
 - Upgrade to 5.0.2, link patches for Qt5CLucene in assistant programs
 

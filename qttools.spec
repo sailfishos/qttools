@@ -24,6 +24,7 @@ BuildRequires:  qt5-qtbootstrap-devel
 BuildRequires:  qt5-qmake
 BuildRequires:  qt5-tools
 BuildRequires:  qt5-qtdbus-devel
+BuildRequires:  pkgconfig(Qt5QmlDevTools)
 BuildRequires:  fdupes
 
 %description
