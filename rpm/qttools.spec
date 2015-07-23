@@ -138,6 +138,8 @@ This package contains the QtHelp library
 %package qthelp-devel
 Summary:    Development files for QtHelp
 Group:      Qt/Qt
+Requires:   qt5-plugin-sqldriver-sqlite
+Requires:   qt5-plugin-platform-minimal
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
  
