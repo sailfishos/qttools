@@ -2,7 +2,7 @@ option(host_build)
 QT = core-private
 
 qtHaveModule(qmldevtools-private) {
-    QT += qmldevtools-private
+    QT += qmldevtools-private qml-private
 } else {
     DEFINES += QT_NO_QML
 }

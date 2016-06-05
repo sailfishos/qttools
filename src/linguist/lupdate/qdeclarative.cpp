@@ -425,8 +425,8 @@ public:
     int end() const { return lastOffset; }
 
     void pragmaLibrary() Q_DECL_OVERRIDE { consumeDirective(); }
-    void importFile(const QString &, const QString &, int, int) Q_DECL_OVERRIDE { consumeDirective(); }
-    void importModule(const QString &, const QString &, const QString &, int, int) Q_DECL_OVERRIDE { consumeDirective(); }
+    void importFile(const QString &, const QString &) Q_DECL_OVERRIDE { consumeDirective(); }
+    void importModule(const QString &, const QString &, const QString &) Q_DECL_OVERRIDE { consumeDirective(); }
 
 private:
     void consumeDirective()
