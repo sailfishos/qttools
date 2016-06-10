@@ -170,6 +170,7 @@ Requires(postun):   /sbin/ldconfig
 Summary:    The QtHelp library
 Group:      Qt/Qt
 Requires:   %{name} = %{version}-%{release}
+Requires:   qt5-qttools-qdoc
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
 
