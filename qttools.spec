@@ -6,7 +6,7 @@ Version:    5.0.2
 Release:    1%{?dist}
 Group:      Qt/Qt
 License:    LGPLv2.1 with exception or GPLv3
-URL:        http://qt.nokia.com
+URL:        https://www.qt.io/
 #Source:     %{name}-%{version}.tar.xz
 Source0:    qttools-opensource-src-%{_qtmodule_snapshot_version}.tar.xz
 Patch0:     link_qhelpconverter_with_qthelp.patch
