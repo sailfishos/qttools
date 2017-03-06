@@ -129,7 +129,6 @@ static const char * const tagalogForms[] =
 #define EOL QLocale::C
 
 static const QLocale::Language japaneseStyleLanguages[] = {
-    QLocale::Armenian,
     QLocale::Bislama,
     QLocale::Burmese,
     QLocale::Chinese,
@@ -251,6 +250,7 @@ static const QLocale::Language englishStyleLanguages[] = {
 };
 static const QLocale::Language frenchStyleLanguages[] = {
     // keep synchronized with frenchStyleCountries
+    QLocale::Armenian,
     QLocale::Breton,
     QLocale::French,
     QLocale::Portuguese,
@@ -301,6 +301,7 @@ static const QLocale::Language tagalogLanguage[] = { QLocale::Tagalog, EOL };
 
 static const QLocale::Country frenchStyleCountries[] = {
     // keep synchronized with frenchStyleLanguages
+    QLocale::AnyCountry,
     QLocale::AnyCountry,
     QLocale::AnyCountry,
     QLocale::Brazil,
