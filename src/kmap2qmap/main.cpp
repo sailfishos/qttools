@@ -318,7 +318,7 @@ static const struct symbol_map_t symbol_map[] = {
     { "Right",   Qt::Key_Right },
     { "Up",      Qt::Key_Up },
     { "Back",    Qt::Key_Back },
-    { "Menu",    Qt::Key_Menu },
+    { "MenuKB",  Qt::Key_MenuKB },
     { "Shift",   Qt::Key_Shift },
     { "AltGr",   Qt::Key_AltGr },
     { "Control", Qt::Key_Control },
