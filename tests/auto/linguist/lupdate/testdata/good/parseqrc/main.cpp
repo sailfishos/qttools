@@ -3,7 +3,7 @@
 ** Copyright (C) 2015 The Qt Company Ltd.
 ** Contact: http://www.qt.io/licensing/
 **
-** This file is part of the Qt Linguist of the Qt Toolkit.
+** This file is part of the test suite of the Qt Toolkit.
 **
 ** $QT_BEGIN_LICENSE:LGPL21$
 ** Commercial License Usage
@@ -31,47 +31,12 @@
 **
 ****************************************************************************/
 
-#ifndef QMAKEVFS_H
-#define QMAKEVFS_H
+// IMPORTANT!!!! If you want to add testdata to this file,
+// always add it to the end in order to not change the linenumbers of translations!!!
 
-#include "qmake_global.h"
 
-# include <qiodevice.h>
-#ifndef PROEVALUATOR_FULL
-# include <qhash.h>
-# include <qstring.h>
-# ifdef PROEVALUATOR_THREAD_SAFE
-#  include <qmutex.h>
-# endif
-#endif
+void func1() {
+    QApplication::tr("Hello world");
+}
 
-QT_BEGIN_NAMESPACE
 
-class QMAKE_EXPORT QMakeVfs
-{
-public:
-    QMakeVfs();
-
-    bool writeFile(const QString &fn, QIODevice::OpenMode mode, bool exe, const QString &contents, QString *errStr);
-    bool readFile(const QString &fn, QString *contents, QString *errStr);
-    bool exists(const QString &fn);
-
-#ifndef PROEVALUATOR_FULL
-    void invalidateCache();
-    void invalidateContents();
-#endif
-
-private:
-#ifndef PROEVALUATOR_FULL
-# ifdef PROEVALUATOR_THREAD_SAFE
-    QMutex m_mutex;
-# endif
-    QHash<QString, QString> m_files;
-    QString m_magicMissing;
-    QString m_magicExisting;
-#endif
-};
-
-QT_END_NAMESPACE
-
-#endif // QMAKEVFS_H
