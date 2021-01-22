@@ -3,9 +3,8 @@ Name:       qt5-qttools
 Summary:    Development tools for Qt
 Version:    5.6.3
 Release:    1%{?dist}
-Group:      Qt/Qt
-License:    LGPLv2.1 with exception or GPLv3
-URL:        http://qt.nokia.com
+License:    (LGPLv2 or LGPLv3) with exception or Qt Commercial
+URL:        https://www.qt.io
 Source:     %{name}-%{version}.tar.bz2
 BuildRequires:  qt5-qtgui-devel
 BuildRequires:  qt5-qtnetwork-devel
@@ -31,7 +30,6 @@ This package contains additional tools for building Qt applications.
 
 %package linguist
 Summary:    The linguist tools
-Group:      Qt/Qt
 Requires:   %{name} = %{version}-%{release}
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
@@ -41,7 +39,6 @@ This package contains the linguist tool
 
 %package pixeltool
 Summary:    The pixeltool tool
-Group:      Qt/Qt
 Requires:   %{name} = %{version}-%{release}
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
@@ -51,7 +48,6 @@ This package contains the pixeltool tool
 
 %package kmap2qmap
 Summary:    The kmap2qmap tool
-Group:      Qt/Qt
 Requires:   %{name} = %{version}-%{release}
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
@@ -61,7 +57,6 @@ This package contains the kmap2qmap tool
 
 %package qtdiag
 Summary:    The Qt diag tool
-Group:      Qt/Qt
 Requires:   %{name} = %{version}-%{release}
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
@@ -71,7 +66,6 @@ This package contains the Qt diag tool
 
 %package qtplugininfo
 Summary:    The Qt plugininfo tool
-Group:      Qt/Qt
 Requires:   %{name} = %{version}-%{release}
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
@@ -81,7 +75,6 @@ This package contains the Qt plugininfo tool
 
 %package qdoc
 Summary:    The Qt documentation tool
-Group:      Qt/Qt
 Requires:   %{name} = %{version}-%{release}
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
@@ -91,7 +84,6 @@ This package contains the Qt documentation tool
 
 %package qdbus
 Summary:    The qdbus and qdbusviewer tool
-Group:      Qt/Qt
 Requires:   %{name} = %{version}-%{release}
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
@@ -101,7 +93,7 @@ This package contains the qdbus and qdbusviewer tool
 
 %package paths
 Summary:    Command line client for standard paths
-Group:      Qt/Qt
+License:    BSD
 Requires:   %{name} = %{version}-%{release}
 
 %description paths
@@ -109,7 +101,6 @@ This package contains the qtpaths tool.
 
 %package qtuitools
 Summary:    The QtUiTools library
-Group:      Qt/Qt
 Requires:   %{name} = %{version}-%{release}
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
@@ -119,7 +110,6 @@ This package contains the QtUiTools library
 
 %package qtuitools-devel
 Summary:    Development files for QtUiTools
-Group:      Qt/Qt
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
  
@@ -130,7 +120,6 @@ applications that use QtUiTools
 
 %package qtuiplugin-devel
 Summary:    Development files for QtUiPlugin
-Group:      Qt/Qt
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
  
@@ -141,7 +130,6 @@ applications that use QtUiPlugin
 
 %package qtclucene
 Summary:    The QtCLucene library
-Group:      Qt/Qt
 Requires:   %{name} = %{version}-%{release}
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
@@ -151,7 +139,6 @@ This package contains the QtCLucene library
 
 %package qtclucene-devel
 Summary:    Development files for QtLucense
-Group:      Qt/Qt
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
  
@@ -161,14 +148,12 @@ applications that use QtCLucene
 
 %package qtdesigner
 Summary: The Qt designer libraries
-Group:      Qt/Qt
 Requires:   %{name} = %{version}-%{release}
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
 
 %package qthelp
 Summary:    The QtHelp library
-Group:      Qt/Qt
 Requires:   %{name} = %{version}-%{release}
 Requires:   qt5-qttools-qdoc
 Requires(post):     /sbin/ldconfig
@@ -179,7 +164,6 @@ This package contains the QtHelp library
 
 %package qthelp-devel
 Summary:    Development files for QtHelp
-Group:      Qt/Qt
 Requires:   qt5-plugin-sqldriver-sqlite
 Requires:   qt5-plugin-platform-minimal
 Requires(post):     /sbin/ldconfig
@@ -195,7 +179,6 @@ applications that use QtDesigner
 
 %package qtdesigner-devel
 Summary:    Development files for QtDesigner
-Group:      Qt/Qt
 Requires(post):     /sbin/ldconfig
 Requires(postun):   /sbin/ldconfig
  
@@ -257,6 +240,8 @@ find %{buildroot}%{_libdir} -type f -name '*.prl' \
 
 %files
 %defattr(-,root,root,-)
+%license LICENSE.LGPLv*
+%license LGPL_EXCEPTION.txt
 
 %files linguist
 %defattr(-,root,root,-)
