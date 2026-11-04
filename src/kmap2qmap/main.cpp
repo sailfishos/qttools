@@ -286,6 +286,7 @@ static const struct symbol_map_t symbol_map[] = {
     { "Camera",        Qt::Key_Camera },
     { "CameraFocus",   Qt::Key_CameraFocus },
     { "HomePage",      Qt::Key_HomePage },
+    { "SelectKey",     Qt::Key_Select }, // "Select" is the console End key
 
     { "Call",             Qt::Key_Call },
     { "Hangup",           Qt::Key_Hangup },
